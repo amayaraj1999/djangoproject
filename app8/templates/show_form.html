@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    {% for msg in messages %}
+        {{msg}}
+    {% endfor %}
+    <form action="" method="post">
+        {% csrf_token %}
+        <table>
+            <tr>
+                {{data.as_table}}
+            </tr>
+        </table>
+        <input type="submit" value="save">
+    </form>
+{% endblock %}
